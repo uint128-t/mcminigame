@@ -1,0 +1,12 @@
+world
+logs
+versions/
+libraries/
+crash-reports/
+usercache.json
+whitelist.json
+server.jar
+banned-ips.json
+banned-players.json
+ops.json
+__pycache__/

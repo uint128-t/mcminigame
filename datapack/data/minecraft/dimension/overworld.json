@@ -1,0 +1,119 @@
+{
+    "type": "minecraft:overworld",
+    "generator": {
+        "type": "minecraft:noise",
+        "settings": {
+            "name": "minecraft:overworld",
+            "default_block": {
+                "Name": "minecraft:stone"
+            },
+            "default_fluid": {
+                "Name": "minecraft:oak_planks"
+            },
+            "sea_level": 0,
+            "disable_mob_generation": false,
+            "aquifers_enabled": false,
+            "ore_veins_enabled": true,
+            "legacy_random_source": false,
+            "noise": {
+                "min_y": -64,
+                "height": 256,
+                "size_horizontal": 1,
+                "size_vertical": 1
+            },
+            "noise_router": {
+                "barrier": "overworld/continents",
+                "fluid_level_floodedness": "zero",
+                "fluid_level_spread": "zero",
+                "lava": "zero",
+                "vein_toggle": "minecraft:end/base_3d_noise",
+                "vein_ridged": "minecraft:end/base_3d_noise",
+                "vein_gap": "minecraft:end/base_3d_noise",
+                "temperature": "minecraft:end/base_3d_noise",
+                "vegetation": 10,
+                "continents": "minecraft:end/base_3d_noise",
+                "erosion": "minecraft:end/base_3d_noise",
+                "depth": "minecraft:end/base_3d_noise",
+                "ridges": "minecraft:end/base_3d_noise",
+                "preliminary_surface_level": "minecraft:end/base_3d_noise",
+                "final_density": {
+                    "type": "minecraft:noise",
+                    "noise": "minecraft:surface",
+                    "xz_scale": 2,
+                    "y_scale": 2
+                }
+            },
+            "spawn_target": [],
+            "surface_rule": {
+                "type": "sequence",
+                "sequence":[
+                    {
+                        "type": "condition",
+                        "if_true": {
+                            "type": "stone_depth",
+                            "offset": 0,
+                            "surface_type": "floor",
+                            "add_surface_depth": false,
+                            "secondary_depth_range": 0
+                        },
+                        "then_run": {
+                            "type": "block",
+                            "result_state": {
+                                "Name": "minecraft:grass_block"
+                            }
+                        }
+                    },
+                    {
+                        "type": "condition",
+                        "if_true": {
+                            "type": "stone_depth",
+                            "offset": 0,
+                            "surface_type": "floor",
+                            "add_surface_depth": true,
+                            "secondary_depth_range": 1
+                        },
+                        "then_run": {
+                            "type": "block",
+                            "result_state": {
+                                "Name": "minecraft:dirt"
+                            }
+                        }
+                    },
+                    {
+                        "type": "condition",
+                        "if_true": {
+                            "type": "stone_depth",
+                            "offset": 0,
+                            "surface_type": "ceiling",
+                            "add_surface_depth": true,
+                            "secondary_depth_range": 5
+                        },
+                        "then_run":{
+                            "type": "block",
+                            "result_state": {
+                                "Name": "minecraft:iron_block"
+                            }
+                        } 
+                    }
+                ]
+            }
+        },
+        "biome_source": {
+            "type": "minecraft:multi_noise",
+            "biomes": [
+                {
+                    "biome": "minecraft:birch_forest",
+                    "parameters": {
+                        "temperature": 2,
+                        "humidity": 2,
+                        "continentalness": 2,
+                        "erosion": 2,
+                        "weirdness": 2,
+                        "depth": 2,
+                        "offset": 1
+                    }
+                }
+            ]
+        }
+    }
+}
