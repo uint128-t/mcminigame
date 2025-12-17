@@ -2,7 +2,7 @@
 clear
 item replace entity @s weapon.offhand with shield
 give @s iron_pickaxe
-give @s crossbow[custom_name="RPG"]
+give @s crossbow[item_name="RPG"]
 give @s oak_planks 64
 give @s iron_block 64
 give @s golden_carrot 64
