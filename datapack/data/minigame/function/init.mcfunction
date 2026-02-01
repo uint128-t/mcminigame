@@ -5,7 +5,7 @@ worldborder set 65535
 gamerule allowEnteringNetherUsingPortals false
 gamerule commandBlockOutput true
 gamerule spawnRadius 50
-gamerule doTileDrops false
+# gamerule doTileDrops false
 gamerule doImmediateRespawn true
 forceload add 0 0 0 0
 setblock 0 -64 0 repeating_command_block{Command:"function minigame:internal",auto:1b} replace

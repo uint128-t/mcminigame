@@ -1,5 +1,5 @@
 ### Minigame tick function
-summon tnt ~ ~ ~ {fuse:20}
+# summon tnt ~ ~ ~ {fuse:20}
 execute if entity @e[tag=minigame_stage1,type=marker] run function minigame:stage1
 execute if entity @e[tag=minigame_stage2,type=marker] run function minigame:stage2
 spreadplayers ~ ~ 0 50 false @e[distance=..1,type=!marker]

@@ -44,7 +44,8 @@ class GameLogic:
             game_server.send_command("summon marker 0 0 0 {Tags:[\"minigame_stage2\"]}")
         if elapsed>120 and not self.ticks%20:
             # game_server.send_command("execute at @a run summon fireball ~ ~40 ~ {Motion:[0f,-0.1f,0f],ExplosionPower:2,Item:{id:\"minecraft:tnt\"}}")
-            game_server.send_command("execute at @a run summon lightning_bolt ~ ~40 ~")
+            # game_server.send_command("execute at @a run summon lightning_bolt ~ ~40 ~")
+            pass
 
         if self.next_spawn_chicken<=elapsed:
             self.next_spawn_chicken+=random.randint(30,60)

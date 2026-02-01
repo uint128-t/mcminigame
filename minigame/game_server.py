@@ -30,7 +30,7 @@ def prepare_server():
 
 def init_server():
     global server,stdout,stdin
-    server=subprocess.Popen(["java","-Xmx2G","-jar","server.jar","nogui"],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    server=subprocess.Popen(["java","-Xmx2G","-jar","server.jar","nogui","--bonusChest"],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     stdout = server.stdout
     stdin = server.stdin
 
